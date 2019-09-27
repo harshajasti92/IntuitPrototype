@@ -1,0 +1,9 @@
+.highlighted{
+  color:#0076C7;
+  cursor:pointer;
+  text-decoration: underline;
+}
+.not_highlighted{
+  color: #0076C7;
+  cursor: pointer;
+}

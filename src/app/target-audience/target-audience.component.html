@@ -1,0 +1,280 @@
+<!-- <div class="content"> -->
+<div class="container" style="text-align:center;">
+  <br>
+  <h2 style="color:#0076C7;">Target Audience</h2>
+  <hr style="border-top: 1px dashed #0076C7; background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#000), to(#fff));">
+  <!-- <hr style="margin: 10px 0;
+    height: 1px;
+    background: #0076C7;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(75%, #0076C7));"> -->
+
+  <!-- <div class="card-container" style="padding-top:10px;">
+
+    <a class="card" (click)="preDefinedClick()" [ngStyle]="preDefined && {'color': '#0074C0'}">
+      <span>PreDefined Segments</span>
+    </a>
+    <a class="card" (click)="customClick()" [ngStyle]="custom && {'color': '#0074C0'}">
+      <span>Custom Segments</span>
+    </a>
+
+  <div> -->
+
+  <div style="padding-top:0px; padding-bottom:20px;">
+    <div class="dropdown" style="padding-right:20px;display:inline;">
+      <button type="button" class="btn btn-primary dropdown-toggle" style="background-color:#0076C7; border-color:#0076C7;" data-toggle="dropdown">PreSelected Segments</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" (click)="buyersClick()">Buyers</a>
+        <a class="dropdown-item" (click)="activeNonBuyersClick()">Active NonBuyers</a>
+        <a class="dropdown-item" (click)="nonActiveClick()">Registered NonActive</a>
+      </div>
+    </div>
+
+    <div class="dropdown" style="display:inline;">
+      <button type="button" class="btn btn-primary dropdown-toggle" style="background-color:#0076C7; border-color:#0076C7;" data-toggle="dropdown">Custom Segments</button>
+      <!-- <div class="dropdown-menu" style="width:400px;">
+        <div class="form-group">
+          <label>Age</label><input style="width:200px; display:inline-block;" placeholder="Enter Age">
+        </div>
+        <div class="form-group">
+          <label>Gender</label><input style="width:200px; display:inline-block;" class="form-control" type="text" placeholder="Enter Gender">
+        </div>
+        <div class="form-group">
+          <label>Purchased Last Year</label><input style="width:200px; display:inline-block;" class="form-control" placeholder="Enter the no">
+        </div>
+      </div> -->
+      <div class="dropdown-menu" style="width:250px;">
+      <form class="px-2">
+        <div class="form-group" style="padding-top:20px;">
+          <!-- <label for="Age" style="background-color:blue; color:white;">  Age  </label><br> -->
+          <h4><span class="badge badge-primary" style="background-color:#0076C7;">Age</span></h4>
+          <label class="checkbox-inline" style="padding-right:15px;"><input type="checkbox" [(ngModel)]="form.checkbox.one" name="one">18+</label>
+          <label class="checkbox-inline" style="padding-right:15px;"><input type="checkbox" [(ngModel)]="form.checkbox.two" name="two">25-34</label>
+          <label class="checkbox-inline" style="padding-right:15px;"><input type="checkbox" [(ngModel)]="form.checkbox.three" name="three">35-44</label><br>
+          <label class="checkbox-inline" style="padding-right:15px;"><input type="checkbox" [(ngModel)]="form.checkbox.four" name="four">45-54</label>
+          <label class="checkbox-inline" style="padding-right:15px;"><input type="checkbox" [(ngModel)]="form.checkbox.five" name="five">55-64</label>
+          <label class="checkbox-inline" ><input type="checkbox" [(ngModel)]="form.checkbox.six" name="six" checked>65+</label>
+        </div>
+        <div class="form-group" style="margin-top:-20px;">
+          <h4><span class="badge badge-primary" style="background-color:#0076C7;">Gender</span></h4>
+          <!-- <label for="Gender">Gender</label><br> -->
+          <label class="checkbox-inline" style="padding-right:15px;"><input type="checkbox" [(ngModel)]="form.gender.male" name="male">Male</label>
+          <label class="checkbox-inline" style="padding-right:15px;"><input type="checkbox" [(ngModel)]="form.gender.female" name="female">Female</label>
+        </div>
+        <div class="form-group" style="margin-top:-20px;">
+          <h4><span class="badge badge-primary" style="background-color:#0076C7;">Purchase Date</span></h4>
+          <!-- <label for="Gender">Gender</label><br> -->
+          <label class="radiobox-inline" style="padding-right:15px;"><input type="radio" name="purchaseDate" [value]=1 [(ngModel)]="radioSelected" (change)="onItemChange(1)"> <6 Mnts</label>
+          <label class="radiobox-inline" style="padding-right:15px;"><input type="radio" name="purchaseDate" [value]=2 [(ngModel)]="radioSelected" (change)="onItemChange(2)"> <1 Year</label>
+          <label class="radiobox-inline" style="padding-right:15px;"><input type="radio" name="purchaseDate" [value]=3 [(ngModel)]="radioSelected" (change)="onItemChange(3)"> <5 Years</label>
+          <label class="radiobox-inline" style="padding-right:15px;"><input type="radio" name="purchaseDate" [value]=4 [(ngModel)]="radioSelected" (change)="onItemChange(4)"> <10 Years</label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="background-color:#0076C7;" data-toggle="dropdown" (click)="customClick()">Analyze</button>
+      </form>
+    </div>
+    </div>
+  </div>
+
+
+
+    <!-- <div class="card-container">
+
+
+      <a class="card" *ngIf="preDefined" (click)="buyersClick()" [ngStyle]="buyers && {'color': '#0074C0'}">
+        <span>Buyers</span>
+      </a>
+      <a class="card" *ngIf="preDefined" (click)="activeNonBuyersClick()" [ngStyle]="activeNonBuyers && {'color': '#0074C0'}">
+        <span>Active Nonbuyers</span>
+      </a>
+      <a class="card" *ngIf="preDefined" (click)="nonActiveClick()" [ngStyle]="nonActive && {'color': '#0074C0'}">
+        <span>Registered NonActive</span>
+      </a>
+      <a class="card" *ngIf="custom" style="cursor:default;">
+        <span>Annual Sales</span>
+      </a>
+      <input type="text" name="" value="" class="card" *ngIf="custom" style="cursor:text;">
+
+    </div> -->
+
+      <div style="padding-right:100px; width:300px; display:inline-block;">
+        <table class="table table-bordered table-sm">
+          <thead style="background-color:#0076C7; color:white;">
+            <th colspan="2">Users</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PreSelected</td>
+              <td>Population</td>
+            </tr>
+            <tr>
+              <td>170</td>
+              <td>360</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div style="padding-right:100px; width:300px; display:inline-block;">
+        <!-- <table class="table-bordered">
+          <thead style="background-color:#0076C7; color:white;">
+            <th colspan="2" style="border: 1px solid #0076C7; padding:4px;">Purchase Freq</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #0076C7; padding:4px;">PreSelected</td>
+              <td style="border: 1px solid #0076C7; padding:4px;">Population</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #0076C7; padding:4px;">100</td>
+              <td style="border: 1px solid #0076C7; padding:4px;">150</td>
+            </tr>
+          </tbody>
+        </table> -->
+
+        <table class="table table-bordered table-sm">
+          <thead style="background-color:#0076C7; color:white;">
+            <th colspan="2">Purchase Freq</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PreSelected</td>
+              <td>Population</td>
+            </tr>
+            <tr>
+              <td>{{purchaseFreq_first}}</td>
+              <td>{{purchaseFreq_second}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="width:200px;display:inline-block;">
+        <table class="table table-bordered table-sm">
+          <thead style="background-color:#0076C7; color:white;">
+            <th colspan="2">AOV</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PreSelected</td>
+              <td>Population</td>
+            </tr>
+            <tr>
+              <td>{{aov_first}}</td>
+              <td>{{aov_second}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- <table class="table-bordered table-sm">
+        <thead style="background-color:#0076C7; color:white;">
+          <th colspan="2" style="border: 1px solid #0076C7; padding:4px;">AOV</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #0076C7; padding:4px;">PreSelected</td>
+            <td style="border: 1px solid #0076C7; padding:4px;">Population</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #0076C7; padding:4px;">100</td>
+            <td style="border: 1px solid #0076C7; padding:4px;">150</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+
+
+
+      <div style="width:1100px; float:left; height:400px; padding-top:10px;">
+
+        <div style="float:left; width: 500px; height: 300px;">
+
+          <h4 style="color:#0076C7;">{{graphOneHeading}} BY GENDER</h4>
+
+          <canvas baseChart
+                height="300px" width="400px"
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [colors]="barChartColors"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+          </canvas>
+        </div>
+
+        <div style="float:right; padding-left:25px; width: 510px; height: 300px;">
+
+          <h4 style="color:#0076C7;">{{graphTwoHeading}} ACROSS AGE GROUPS</h4>
+
+            <canvas baseChart
+                  height="300px" width="400px"
+                  [datasets]="barChart1Data"
+                  [labels]="barChartLabels1"
+                  [colors]="barChartColors"
+                  [options]="barChartOptions1"
+                  [plugins]="barChartPlugins1"
+                  [legend]="barChartLegend1"
+                  [chartType]="barChartType1">
+            </canvas>
+
+        </div>
+      </div>
+
+    <div style="padding-top:10px; padding-bottom:50px;">
+
+    <!-- <h4 style="color:#0076C7;">BUYING METRICS ACROSS DIVISIONS</h4>
+    <div style="float:left; padding-left:200px;">
+      <h4>Consumer Group</h4>
+      <table class="table-bordered" style="background-color:#5EB5EF;">
+        <thead>
+          <th>Metric</th>
+          <th>Total</th>
+          <th>Footwear</th>
+          <th>Apparel</th>
+          <th>Equipment</th>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let item of consumer_data">
+            <td>{{item.metric}}</td>
+            <td>{{item.total}}</td>
+            <td>{{item.footwear}}</td>
+            <td>{{item.apparel}}</td>
+            <td>{{item.equipment}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="float:right; padding-right:200px;">
+      <h4>Comparison Group</h4>
+      <table class="table-bordered">
+        <thead>
+          <th>Metric</th>
+          <th>Total</th>
+          <th>Footwear</th>
+          <th>Apparel</th>
+          <th>Equipment</th>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let item of consumer_data1">
+            <td>{{item.metric}}</td>
+            <td>{{item.total}}</td>
+            <td>{{item.footwear}}</td>
+            <td>{{item.apparel}}</td>
+            <td>{{item.equipment}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div> -->
+
+
+</div>
+
+
+
+
+
+
+
+<!-- </div> -->

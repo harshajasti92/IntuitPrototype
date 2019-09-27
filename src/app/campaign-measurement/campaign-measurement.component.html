@@ -1,0 +1,59 @@
+<div class="container">
+  <br>
+  <h2 style="color:#0076C7; text-align:center;">Campaign Measurement</h2>
+  <hr style="border-top: 1px dashed #0076C7; background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#000), to(#fff));">
+  <br>
+  <!-- <div class="flex"> -->
+  <div style="float:left; padding-right:40px; margin-top:65px;">
+    <table class="table table-bordered table-md" style="text-align:center;">
+      <tr>
+        <th style="background-color:#0076C7; color:white;">Campaign</th>
+        <th style="background-color:#0076C7; color:white;">Click Through</th>
+        <th style="background-color:#0076C7; color:white;">Visits</th>
+        <th style="background-color:#0076C7; color:white;">Conversion</th>
+      </tr>
+      <tr *ngFor="let campaign of total_campaigns">
+        <td style=" border-color:#0076C7;" [ngClass]="{'highlighted': campaign.campaign_name === currentCompany,'not_highlighted': campaign.campaign_name !== currentCompany}" (click)="changeData(campaign);">{{campaign.campaign_name}}</td>
+        <td style=" border-color:#0076C7;">{{campaign.clicks}}</td>
+        <td style=" border-color:#0076C7;">{{campaign.visits}}</td>
+        <td style=" border-color:#0076C7;">{{campaign.conversion}}</td>
+      </tr>
+    </table>
+  </div>
+  <div style="float:right;">
+    <!-- <div class="flex-item"> -->
+
+    <h4 style="color:#0076C7; text-align:center;">{{campaign_details}}</h4>
+
+    <br>
+    <div style="float:left; padding-right:10px;">
+      <div style="display: block;">
+      <canvas baseChart width="280" height="300"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  [plugins]="lineChartPlugins"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+    <div style="float:right;">
+      <div style="display: block;">
+      <canvas baseChart width="280" height="300"
+                  [datasets]="lineChart2Data"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors2"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  [plugins]="lineChartPlugins"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+    <!-- <div class="flex-item"> -->
+  </div>
+</div>
